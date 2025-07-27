@@ -35,4 +35,23 @@ class News(models.Model):
         verbose_name = 'News'
         verbose_name_plural = 'News'
         ordering = ['-id']
+        
 
+
+class RegisterPopulation(models.Model):
+    "Регистрация насиление"
+    name = models.CharField()
+    surname = models.CharField()
+    born_date = models.DateTimeField()
+    height = models.FloatField(default=0.0)
+    weight = models.FloatField(default=0.0)
+    parents_full_name = models.TextField()
+
+
+    class Meta:
+        verbose_name = 'child'
+        verbose_name_plural = 'children'
+        
+    
+    
+    
