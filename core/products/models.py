@@ -36,3 +36,23 @@ class News(models.Model):
         verbose_name_plural = 'News'
         ordering = ['-id']
 
+class Car(models.Model):
+    '''Car '''
+
+    currency = [
+        ("Сом", "Сом"),
+        ("Доллар", "$")
+    ]
+
+    name = models.CharField(max_length=200, verbose_name='Car Name')
+    price = models.IntegerField(verbose_name='Car Price', blank=True, null=True)
+    year = models.IntegerField(verbose_name='Car Year', blank=True, null=True)
+    country_production = models.CharField(verbose_name='Car Country Production', max_length=200, blank=True, null=True)
+    brend = models.CharField(verbose_name='Car Brend', max_length=200, blank=True, null=True)
+    weight = models.FloatField(verbose_name='Car Weight', blank=True, null=True)
+    color = models.CharField(verbose_name='Car Color', max_length=200, blank=True, null=True)
+    photo = models.ImageField(null=True, blank=True, verbose_name='Car Photo')
+    currency = models.CharField(verbose_name='Car Currency', max_length=200, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Car'
